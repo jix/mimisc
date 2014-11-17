@@ -1,5 +1,5 @@
 from mibuild.generic_platform import *
-from mibuild.xilinx_ise import XilinxISEPlatform, CRG_SE
+from mibuild.xilinx_ise import XilinxISEPlatform
 from mibuild.crg import SimpleCRG
 
 
