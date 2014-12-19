@@ -14,7 +14,11 @@ class ListSource(SimActor):
     def _source_gen(self):
         while True:
             if self.tokens:
-                yield Token('source', self.tokens.pop(0))
+                token = self.tokens.pop(0)
+                if token:
+                    yield Token('source', token)
+                else:
+                    yield None
             else:
                 yield None
 
