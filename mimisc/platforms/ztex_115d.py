@@ -18,9 +18,10 @@ _io = [
 ]
 
 class Platform(XilinxISEPlatform):
-    def __init__(self, manual_timing=False):
+    def __init__(self, manual_timing=False, extra_io=[]):
+        io = _io + extra_io
         self.manual_timing = manual_timing
-        XilinxISEPlatform.__init__(self, "xc6slx150-3csg484", _io,
+        XilinxISEPlatform.__init__(self, "xc6slx150-3csg484", io,
                 lambda p: SimpleCRG(p, "clk_if", None))
         self.add_platform_command("""
 CONFIG VCCAUX = "2.5";
